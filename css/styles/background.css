@@ -1,0 +1,15 @@
+body {
+    background-color: #000;
+    background-image: url(../assets/food_background.jpg);
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+    /* background-repeat: repeat; */
+    /* background-position: center; */
+    background-position: 10px 20px;
+}
+
+h1 {
+    background-color: #FFF4;
+    color: #333;
+}

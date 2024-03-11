@@ -16,6 +16,22 @@ body {
     height: 100%;
 }
 
+.go-to-top {
+    position: fixed;
+    bottom: 200px;
+    right: 250px;
+    text-align: center;
+    background-color: #FFF6;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.go-to-top p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
 .container {
     background-color: white;
     /* margin-left: 300px;
@@ -32,6 +48,11 @@ body {
 } */
 
 .header {
+    position: fixed;
+    width: 600px;
+    z-index: 2;
+    top: 0;
+
     background-color: lightgray;
     /* width: 500px;
     border: 10px solid red;
@@ -43,16 +64,53 @@ body {
     /* background-color: yellow; */
     /* background-color: #fed50a; */
     background-color: #FED50A;
+
+    position: relative;
 }
 
-.header-logo-list {
-    padding: 0;
-    margin: 0;
+.header-logo-list-item:nth-child(2) {
+    position: absolute;
+    right: 47px;
 }
 
+.header-logo-list-item:last-child {
+    position: absolute;
+    right: 5px;
+}
+
+/* 이 방식이 정석이다.
 .header-logo-list-item {
     display: inline-block;
+    width: 49%;
 }
+
+.header-logo-list-item:last-child {
+    text-align: right;
+} 
+*/
+
+/* .header-logo-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+} */
+
+/* .header-logo-list-item {
+    margin-right: 5px;
+} */
+
+/* .header-logo-list-item:first-child {
+    float: left;
+    margin-left: 10px;
+}
+
+.header-logo-list-item:nth-child(3) {
+    float: right;
+}
+
+.header-logo-list-item:nth-child(2) {
+    float: right;
+} */
 
 .header-category {
     background-color: whitesmoke;
@@ -89,13 +147,22 @@ body {
 }
 
 .content {
+    margin-top: 94px;
+
     background-color: white;
     /* height: 80%; */
     /* header, paginator, footer의 크기를 빼준다.*/
     height: calc(100% - 98px - 83px - 54px + 10px - 13px - 3px);
 }
 
+.content-article:first-child {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
 .content-article {
+    position: relative;
+
     background-color: white;
     /* padding: 10px; */
     padding-bottom: 10px;
@@ -107,6 +174,18 @@ body {
 
 .content-article:last-child {
     border-bottom: 0;
+}
+
+.best-article {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    background-color: #F00;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    color: #FFF;
 }
 
 .content-article-title {
@@ -150,6 +229,41 @@ body {
     content: "|";
     padding-right: 10px;
     color: #DDDDDD;
+}
+
+.search-area {
+    padding: 10px;
+    text-align: center;
+}
+
+.search-form {
+    background-color: #F001;
+    padding: 10px;
+}
+
+.search-title {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.search-input {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    vertical-align: middle;
+}
+
+.search-input:focus {
+    outline: 0px;
+}
+
+.search-button {
+    background-color: #1A1AF7;
+    padding: 8px;
+    border-radius: 3px;
+    color: #FFF;
+    border: 0px;
+    vertical-align: middle;
 }
 
 .paginator {
@@ -221,4 +335,8 @@ a:active {
 /* 링크에 마우스를 올렸을 때 스타일 변경 */
 a:hover {
     font-weight: bold;
+}
+
+.clear-line {
+    clear: both;
 }

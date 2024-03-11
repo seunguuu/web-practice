@@ -1,0 +1,19 @@
+.images {
+    display: inline-block;
+    position: relative;
+}
+
+img {
+    width: 400px;
+    height: 350px;
+}
+
+.images div {
+    position: absolute;
+    bottom: 4px;
+    background-color: #FFFA;
+    width: 100%;
+    height: 30%;
+    padding-top: 16px;
+    text-align: center;
+}
