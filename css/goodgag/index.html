@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고급유머</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=PT+Sans+Narrow:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/mobile.common.css">
 </head>
+
 <body>
+    <div class="aside-menu">
+        <ul>
+            <li>마이페이지</li>
+            <li>글쓰기</li>
+            <li>로그인</li>
+            <li>로그아웃</li>
+            <li>회원가입</li>
+            <li onclick="document.getElementsByClassName('aside-menu')[0].style.display = 'none'">닫기</li>
+        </ul>
+    </div>
     <div class="go-to-top">
         <p>↑</p>
         <p>TOP</p>
@@ -14,33 +34,37 @@
     <div class="container">
         <div class="header">
             <div class="header-logo">
-                <img class="header-logo-list-item" src="./assets/logo.png" alt="고급유머 로고">
-                <img class="header-logo-list-item" src="./assets/my.png" alt="고급유머 마이페이지">
-                <img class="header-logo-list-item" src="./assets/write.png" alt="고급유머 글 작성">
-                
-                <!-- 이 방식이 정석이다.(더 편하기 때문)
-                <div class="header-logo-list-item">
-                    <img src="./assets/logo.png" alt="고급유머 로고">
-                </div>
-                <div class="header-logo-list-item">
-                    <img src="./assets/my.png" alt="고급유머 마이페이지">
-                    <img src="./assets/write.png" alt="고급유머 글 작성">
-                </div>
-                 -->
+                <div class="inline-block hamburger"
+                    onclick="document.getElementsByClassName('aside-menu')[0].style.display = 'block'"></div>
+                <div class="inline-block"></div>
+                <div class="inline-block"></div>
+                <div class="inline-block"></div>
+                <!-- <img class="header-logo-list-item" src="./assets/my.png" alt="고급유머 마이페이지" />
+                <img class="header-logo-list-item" src="./assets/logo.png" alt="고급유머 로고" />
+                <img class="header-logo-list-item" src="./assets/write.png" alt="고급유머 글 작성" /> -->
 
-                <!-- 
+                <!-- 이 방식이 정석이다.
+                <div class="header-logo-list-item">
+                    <img src="./assets/logo.png" alt="고급유머 로고" />
+                </div>
+                <div class="header-logo-list-item">
+                    <img src="./assets/my.png" alt="고급유머 마이페이지" />
+                    <img src="./assets/write.png" alt="고급유머 글 작성" />
+                </div> 
+                -->
+                <!--
                 <ul class="header-logo-list">
                     <li class="header-logo-list-item">
-                        <img src="./assets/logo.png" alt="고급유머 로고">
+                        <img src="./assets/logo.png" alt="고급유머 로고" />
                     </li>
                     <li class="header-logo-list-item">
-                        <img src="./assets/write.png" alt="고급유머 글 작성">
+                        <img src="./assets/write.png" alt="고급유머 글 작성" />
                     </li>
                     <li class="header-logo-list-item">
-                        <img src="./assets/my.png" alt="고급유머 마이페이지">
+                        <img src="./assets/my.png" alt="고급유머 마이페이지" />
                     </li>
+                    <div class="clear-line"></div>
                 </ul>
-                <div class="clear-line"></div>
                 -->
             </div>
             <div class="header-category">
@@ -50,7 +74,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="content">
             <div class="content-article">
                 <h3 class="content-article-title">
@@ -120,9 +143,9 @@
                     <option>작성자+내용</option>
                     <option>글번호</option>
                 </select>
-                <label class="search-title" for="search-keyword">검색어</label>
-                <input class="search-input" id="search-keyword"/>
 
+                <label class="search-title" for="search-keyword">검색어</label>
+                <input class="search-input" id="search-keyword" />
                 <button class="search-button">검색</button>
             </form>
         </div>
@@ -148,7 +171,6 @@
                 </li>
             </ul>
         </div>
-
         <div class="footer">
             <div class="footer-button-area">
                 <button class="footer-button-area-login-btn">로그인</button>
@@ -157,4 +179,5 @@
         </div>
     </div>
 </body>
+
 </html>
