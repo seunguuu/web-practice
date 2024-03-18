@@ -75,18 +75,24 @@ $().ready(function() {
     console.log("선택한 장르는: ", checkedGenreValue);
 
 
-    
+
     $("#checked-all").on("change", function() {
+        // checked 속성값을 가져온다.
         var isChecked = $(this).prop("checked");
         
+        // 모든 장르 체크박스에 checked 할당. 전체선택 기능
         $("input[type=checkbox][name=favorite-genre]").prop("checked", isChecked);
     });
 
     $("input[type=checkbox][name=favorite-genre]").on("change", function() {
+        // 체크박스들이 모두 체크되어 있을때의 길이 체크
         var allCheckboxLength = $("input[type=checkbox][name=favorite-genre]").length;
+        // 체크된 체크박스의 길이 체크
         var checkedCheckboxLength = $("input[type=checkbox][name=favorite-genre]:checked").length;
 
+        // 모두 선택되어있다면 isAllChecked는 true, 하나라도 체크가 되어있지 않다면 isAllChecked는 false
         var isAllChecked = allCheckboxLength === checkedCheckboxLength;
+        // 결과를 "전체선택" 체크박스에 반영
         $("#checked-all").prop("checked", isAllChecked);
     })
 });
