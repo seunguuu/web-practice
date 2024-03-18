@@ -25,6 +25,7 @@ $().ready(function() {
     selectedJobs = $("#jobs").val(); // 3
     console.log(selectedJobs); // 3
 
+
     // 4. jobs의 옵션이 바뀌었을 때 발생할 이벤트를 정의.
     $("#jobs").on("change", function() {
         var changedOptionValue = $(this).val();
@@ -47,40 +48,47 @@ $().ready(function() {
         else{
             alert("올바른 직업을 선택하세요!");
         }
-
-
-        var checkedAgeLength = $("input[type=radio][name=age]:checked").length;
-        console.log(checkedAgeLength);
-        if(checkedAgeLength === 0){
-            alert("나이대를 선택해주세요!");
-        }
-        
-        var checkedAgeValue = $("input[type=radio][name=age]:checked").val();
-        console.log("선택한 나이대는: ", checkedAgeValue);
-
-        var checkedGenreLength = $("input[type=checkbox][name=favorite-genre]:checked").length;
-        console.log(checkedGenreLength);
-        if(checkedAgeLength === 0){
-            alert("좋아하는 장르를 1개 이상 선택해주세요!");
-        }
-
-        var checkedGenreValue = $("input[type=checkbox][name=favorite-genre]:checked").val();
-        console.log("선택한 장르는: ", checkedGenreValue);
-
-        $("#checked-all").on("change", function() {
-            var isChecked = $(this).prop("checked");
-            
-            $("input[type=checkbox][name=favorite-genre]").prop("checked", isChecked);
-        });
-
-        $("input[type=checkbox][name=favorite-genre]").on("change", function() {
-            var allCheckboxLength = $("input[type=checkbox][name=favorite-genre]").length;
-            var checkedCheckboxLength = $("input[type=checkbox][name=favorite-genre]:checked").length;
-
-            var isAllChecked = allCheckboxLength === checkedCheckboxLength;
-            $("#checked-all").prop("checked", isAllChecked);
-        })
     });
+
+    //   $("#jobs").val("999999");
+    //   $("#jobs").change();
+
+    
+    var checkedAgeLength = $("input[type=radio][name=age]:checked").length;
+    console.log(checkedAgeLength);
+    if(checkedAgeLength === 0){
+        alert("나이대를 선택해주세요!");
+    }
+    
+    var checkedAgeValue = $("input[type=radio][name=age]:checked").val();
+    console.log("선택한 나이대는: ", checkedAgeValue);
+
+
+
+    var checkedGenreLength = $("input[type=checkbox][name=favorite-genre]:checked").length;
+    console.log(checkedGenreLength);
+    if(checkedGenreLength === 0){
+        alert("좋아하는 장르를 1개 이상 선택해주세요!");
+    }
+
+    var checkedGenreValue = $("input[type=checkbox][name=favorite-genre]:checked").val();
+    console.log("선택한 장르는: ", checkedGenreValue);
+
+
+    
+    $("#checked-all").on("change", function() {
+        var isChecked = $(this).prop("checked");
+        
+        $("input[type=checkbox][name=favorite-genre]").prop("checked", isChecked);
+    });
+
+    $("input[type=checkbox][name=favorite-genre]").on("change", function() {
+        var allCheckboxLength = $("input[type=checkbox][name=favorite-genre]").length;
+        var checkedCheckboxLength = $("input[type=checkbox][name=favorite-genre]:checked").length;
+
+        var isAllChecked = allCheckboxLength === checkedCheckboxLength;
+        $("#checked-all").prop("checked", isAllChecked);
+    })
 });
 
 
